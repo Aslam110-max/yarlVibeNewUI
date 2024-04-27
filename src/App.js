@@ -8,14 +8,14 @@ class App extends Component{
       
     }
   }
-  API_URL ="http://localhost:5264/";
+  API_URL ="http://localhost:5136/";
   componentDidMount(){
     this.refreshData();
     
   }
   async refreshData(){
     
-    fetch(this.API_URL+"api/YarlVibeControllers/GetData").then(response=>response.json()).then(data=>{
+    fetch(this.API_URL+"api/YarlVibe/GetData").then(response=>response.json()).then(data=>{
       this.setState({datas:data});
     })
   }
@@ -24,10 +24,11 @@ class App extends Component{
     var staffName = event.target.newStaffName.value;
     var kitchenId = event.target.newkitchenId.value;
     const data = new FormData();
+    
     data.append("staffName",staffName);
     data.append("kitchenId",kitchenId);
     
-    fetch(this.API_URL+"api/YarlVibeControllers/AddData",{
+    fetch(this.API_URL+"api/YarlVibe/AddData",{
       method:"POST",
       body:data
     }).then(res=>res.json()).then((result)=>{
@@ -37,7 +38,7 @@ class App extends Component{
   }
   async deleteClick(id){
     
-    fetch(this.API_URL+"api/YarlVibeControllers/DeleteData?id="+id,{
+    fetch(this.API_URL+"api/YarlVibe/DeleteData?id="+id,{
       method:"DELETE",
     }).then(res=>res.json()).then((result)=>{
       alert(result);
