@@ -5,7 +5,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 <FontAwesomeIcon icon={faSearch} className="search-icon" />*/
 const SearchBar = ({setSearchText}) => {
     
-
+//sd
   return (
     <div className="search-container">
       <input
