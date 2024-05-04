@@ -7,6 +7,9 @@
         display: flex;
         align-items: center;
       }
+      .title{
+        font-size: 25px;
+      }
    
   }
   
@@ -17,6 +20,9 @@
         justify-content: space-between;
         flex-direction:  row;
         display: flex;
+      }
+      .title{
+        font-size: 40px;
       }
    
   }

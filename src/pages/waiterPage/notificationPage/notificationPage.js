@@ -13,7 +13,7 @@ for (let i = 1; i <= 100; i++) {
     return (
         <div>
           <div  className="header" >
-            <h1 style={{fontSize:Dimensions.get('window').width<=421?"25px":"40px"}}>Notifications</h1>
+            <h1 className="title">Notifications</h1>
             <SearchBar setSearchText={setSearchText}/>
           </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
