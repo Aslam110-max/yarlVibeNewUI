@@ -1,17 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom';
+import NotificationPage from "./pages/waiterPage/notificationPage/notificationPage";
+import {SafeAreaView} from "react-native";
+import WaiterTablePage from './pages/waiterPage/tablePage/tablePage';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#F7F7F7" }}>
+      <WaiterTablePage/>
+    </SafeAreaView>
+    
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
