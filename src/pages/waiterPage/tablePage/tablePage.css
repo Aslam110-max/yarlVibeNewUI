@@ -9,6 +9,7 @@
         background-color: white;
       }
       .notification-icon{
+        cursor: pointer;
        padding-top: 2%;
        font-size: 150%;
       }
@@ -28,6 +29,7 @@
         display: flex;
       }
       .notification-icon{
+        cursor: pointer;
         padding-top: 2%;
         font-size: 200%;
         

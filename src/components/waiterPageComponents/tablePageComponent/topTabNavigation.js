@@ -35,7 +35,7 @@ const TopTabNavigation = ({ onSelectTab }) => {
         Upper Floor
       </div>
     </div>
-      <div className="horizontal-line"></div>
+     
     </div>
     
   );

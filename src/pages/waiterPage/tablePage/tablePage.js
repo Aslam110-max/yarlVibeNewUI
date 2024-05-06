@@ -15,9 +15,11 @@ const WaiterTablePage = () => {
   const navigate = useNavigate();
 
   const handleBellIconClick = () => {
-    navigate('/notification-page');
+    navigate('/waiter-page/notification-page');
   };
-  
+  const data = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8"];
+  const data2 = ["Item 11", "Item 22", "Item 33", "Item 44", "Item 55", "Item 66", "Item 77", "Item 88","Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8"];
+
   return (
     
       <div>
@@ -28,8 +30,8 @@ const WaiterTablePage = () => {
           </div>
           <div>
             <TopTabNavigation onSelectTab={setSelectedTab} />
-            {selectedTab === 'Main Floor' && <MainFloor/>}
-            {selectedTab === 'Upper Floor' && <UpperFloor/>}
+            {selectedTab === 'Main Floor' && <MainFloor data={data}/>}
+            {selectedTab === 'Upper Floor' && <UpperFloor data={data2}/>}
           </div>
       </div>
     

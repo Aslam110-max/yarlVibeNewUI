@@ -1,0 +1,19 @@
+
+.details-container {
+    border-radius: 10;
+    background-color: #F5F5F5;
+    padding:0.5%;
+    width: 100%;
+    align-self: center;
+    text-align:center;
+  }
+  .details-row {
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+  }
+  .details-label {
+    font-weight: normal;
+    margin-right: 5; 
+    
+  }
