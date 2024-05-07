@@ -1,0 +1,14 @@
+.text-container {
+   margin: 2%;
+    width: 30%;
+    height: 100%;
+    overflow-y: auto; /* Add scrollbar if content overflows vertically */
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .text-row {
+    margin: 5px 0;
+    font-size: 14px;
+  }
+  

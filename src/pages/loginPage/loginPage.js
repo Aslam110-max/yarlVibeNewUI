@@ -16,11 +16,14 @@ const LoginPage = () => {
     const handleButton1Click = () => {
         navigate('/waiter-page');
       };
+      const handleButton2Click = () => {
+        navigate('/cashier-home-page');
+      };
     
   return (
     <div className="centered">
       <Button color="#ff5733" text="Button 1" onPressed={handleButton1Click} />
-      <Button color="#33ff57" text="Button 2" />
+      <Button color="#33ff57" text="Button 2" onPressed={handleButton2Click}/>
       <Button color="#5733ff" text="Button 3" />
       <Button color="#33ffff" text="Button 4" />
       <Button color="#ffff33" text="Button 5" />

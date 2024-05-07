@@ -1,7 +1,7 @@
 import {  StyleSheet, Dimensions} from "react-native";
 import React,{useState} from "react";
 import OrderDetailsComponent from "../../../components/waiterPageComponents/notificationPageComponents/orderDetails";
-import SearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
+import WaiterSearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
 import "./notificationPage.css"
 export default function NotificationPage(){
   const [searchText, setSearchText] = useState("");
@@ -14,7 +14,7 @@ for (let i = 1; i <= 100; i++) {
         <div>
           <div  className="header" >
             <h1 className="title">Notifications</h1>
-            <SearchBar setSearchText={setSearchText}/>
+            <WaiterSearchBar setSearchText={setSearchText}/>
           </div>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
         <div  className="titleContainer">

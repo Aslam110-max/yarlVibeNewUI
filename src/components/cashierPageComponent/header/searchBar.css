@@ -1,5 +1,5 @@
 @media (max-width: 421px) {
-    .waiter-search-container {
+    .cashier-search-container {
         display: flex;
         align-items: center;
         border-radius: 20px;
@@ -9,7 +9,7 @@
         
       }
       
-      .waiter-search-input {
+      .cashier-search-input {
         display: flex;
         border: none;
         outline: none;
@@ -22,14 +22,14 @@
   }
   
   @media (min-width: 421px) {
-    .search-container {
+    .cashier-search-container {
         display: flex;
         align-items: center;
         border-radius: 20px;
         padding: 1% 2%;
       }
       
-      .search-input {
+      .cashier-search-input {
         border: none;
         outline: none;
         padding: 3% 10% 3% 4%;

@@ -1,17 +1,17 @@
-
+import React,{useState} from 'react';
 import './searchBar.css'; // Import CSS for search bar styles
 /*import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 <FontAwesomeIcon icon={faSearch} className="search-icon" />*/
-const WaiterSearchBar = ({setSearchText}) => {
+const CashierSearchBar = ({setSearchText}) => {
     
-
+//sdsdsjdjsd
   return (
-    <div className="waiter-search-container">
+    <div className="cashier-search-container">
       <input
         type="text"
-        className="waiter-search-input"
-        placeholder="Search Order ID"
+        className="cashier-search-input"
+        placeholder="Search..."
         onChange={(e)=>setSearchText(e.target.value)}
         
       />
@@ -20,4 +20,4 @@ const WaiterSearchBar = ({setSearchText}) => {
   );
 };
 
-export default WaiterSearchBar;
+export default CashierSearchBar;
