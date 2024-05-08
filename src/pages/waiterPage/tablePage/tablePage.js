@@ -7,7 +7,6 @@ import MainFloor from '../../../components/waiterPageComponents/tablePageCompone
 import UpperFloor from '../../../components/waiterPageComponents/tablePageComponent/upperFloor';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
-import NotificationPage from '../notificationPage/notificationPage';
 import { useNavigate } from 'react-router-dom';
 
 const WaiterTablePage = () => {

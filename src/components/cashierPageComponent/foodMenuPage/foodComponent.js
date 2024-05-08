@@ -11,6 +11,7 @@ const FoodComponent = ({ imageUrl, text }) => {
       </div>
       <div className="food-text-container">
         <p className="text">{text}</p>
+        <p className="text">price</p>
       </div>
     </div>
   );
