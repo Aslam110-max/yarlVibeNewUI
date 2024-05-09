@@ -1,5 +1,5 @@
 @media (max-width: 421px) {
-    .waiter-search-container {
+    .kitchen-search-container {
         display: flex;
         align-items: center;
         border-radius: 20px;
@@ -9,7 +9,7 @@
         
       }
       
-      .waiter-search-input {
+      .kitchen-search-input {
         display: flex;
         border: none;
         outline: none;
@@ -22,14 +22,14 @@
   }
   
   @media (min-width: 421px) {
-    .waiter-search-container {
+    .kitchen-search-container {
         display: flex;
         align-items: center;
         border-radius: 20px;
         padding: 1% 2%;
       }
       
-      .waiter-search-input {
+      .kitchen-search-input {
         border: none;
         outline: none;
         padding: 3% 10% 3% 4%;

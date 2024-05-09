@@ -10,7 +10,7 @@ const CashierHomePage =()=>{
     const navigate = useNavigate();
 
     const handleCartIconClick = () => {
-        navigate('/waiter-page/notification-page');
+        navigate('/cashier-home-page/orders');
       };
     const [searchText, setSearchText] = useState("");
     return(

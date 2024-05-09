@@ -33,6 +33,7 @@
   
   .food-text-container {
     text-align: center;
+    width: 100%;
   }
   
   .text {
@@ -40,4 +41,28 @@
     font-weight: bold;
     margin: 0;
   }
+  .add-food-button{
+    border: none;
+    border-radius: 20px; /* Adjust the border-radius for curved edges */
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    background-color: rgb(193, 64, 0);
+    width: 80%;
+  }
+  @media (max-width: 421px) {
+    .add-food-button{
+     display: block;
+    }
+    
+   }
+   
+   @media (min-width: 421px) {
+     .add-food-button{
+       display: none;
+      }
+   }
   
