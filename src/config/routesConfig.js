@@ -7,6 +7,7 @@ import LoginPage from '../pages/loginPage/loginPage';
 import CashierHomePage from '../pages/cashierPage/cashierHomePage';
 import MobileFoodOrderPage from '../components/cashierPageComponent/mobileFoodOrderpPage/mobileFoodOrderPage';
 import KitchenStaffPage from '../pages/kitchenStaffPage/kitchenStaffPage';
+import App from '../App';
 
 const RoutesConfig = () => {
   return (
@@ -20,6 +21,8 @@ const RoutesConfig = () => {
         <Route path="/cashier-home-page/orders" element={<MobileFoodOrderPage />} />
 
         <Route path="/kitchen-staff" element={<KitchenStaffPage />} />
+
+        <Route path="/app" element={<App />} />
 
 
 

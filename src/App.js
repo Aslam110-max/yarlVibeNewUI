@@ -14,7 +14,6 @@ class App extends Component{
     
   }
   async refreshData(){
-    
     fetch(this.API_URL+"api/YarlVibe/GetData").then(response=>response.json()).then(data=>{
       this.setState({datas:data});
     })

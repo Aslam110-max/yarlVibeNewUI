@@ -23,13 +23,16 @@ const LoginPage = () => {
       const handleButton3Click = () => {
         navigate('/kitchen-staff');
       };
+      const handleButton4Click = () => {
+        navigate('/app');
+      };
     
   return (
     <div className="centered">
       <Button color="#ff5733" text="Button 1" onPressed={handleButton1Click} />
       <Button color="#33ff57" text="Button 2" onPressed={handleButton2Click}/>
       <Button color="#5733ff" text="Button 3" onPressed={handleButton3Click} />
-      <Button color="#33ffff" text="Button 4" />
+      <Button color="#33ffff" text="Button 4" onPressed={handleButton4Click} />
       <Button color="#ffff33" text="Button 5" />
     </div>
   );

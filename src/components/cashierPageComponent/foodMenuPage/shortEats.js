@@ -6,8 +6,8 @@ const ShortEatsPage=({data})=>{
 return (
     <div className="background-container-shortEats">
             <div className="grid-container-shortEats">
-      {data.map((item, index) => (
-        <FoodComponent imageUrl={ImagePath} text={item} key={item}/>
+            {data.map(table => (
+        <FoodComponent imageUrl={ImagePath} text={table.tableCode} key={table.tableCode}/>
       ))}
     </div>
         </div>

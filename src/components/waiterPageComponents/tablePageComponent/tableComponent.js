@@ -18,16 +18,26 @@ const ThreeChair =()=>{
     <div className='chair-top'></div>
 </div>
 }
-const TableComponent = ({ tableNumber }) => {
+const TableComponent = ({ tableNumber, tableStatus, updateTableStatus }) => {
+  const HandleClick=()=>{
+    const confirmToggle = window.confirm(tableStatus=="Available"?'Are you sure you want to change status to Occupied?':'Are you sure you want to change status to Available?');
+    if (confirmToggle) {
+      const newStatus = tableStatus=="Available"?"Not Available":"Available"
+      updateTableStatus(tableNumber,newStatus );
+    } else {
+      //document.getElementById('checkbox').checked = false;
+    }
+   
+  }
   return (
-    <div className="table-container">
+    <div className="table-container" onClick={HandleClick}>
         <div></div>
         <div className='table-setup' style={{scale:"1.3"}}>
            <ThreeChair/>
            <TableTwoChair number={tableNumber}/>
             <ThreeChair/>
         </div>
-        <div className='active-line'></div>
+        <div className={tableStatus=="Available"?"active-line-green":"active-line-red"} ></div>
       
     </div>
   );

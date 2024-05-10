@@ -6,8 +6,8 @@ const MainCoursePage=({data})=>{
 return (
     <div className="background-container-mainCourse">
             <div className="grid-container-mainCourse">
-      {data.map((item, index) => (
-        <FoodComponent imageUrl={ImagePath} text={item} key={item}/>
+      {data.map(table => (
+        <FoodComponent imageUrl={ImagePath} text={table.tableCode} key={table.tableCode}/>
       ))}
     </div>
         </div>

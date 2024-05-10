@@ -1,13 +1,13 @@
 import TableComponent from "./tableComponent";
 import "./upperFloor.css"
 
-const UpperFloor =({data})=>{
+const UpperFloor =({data, updateTableStatus})=>{
     return (
         <div className="upperFloor">
             <div className="up-background-container">
             <div className="up-grid-container">
-      {data.map((item, index) => (
-        <TableComponent tableNumber={item} key={item}/>
+            {data.map(table => (
+        <TableComponent tableNumber={table.TableCode} key={table.TableCode} tableStatus={table.TableStatus} updateTableStatus={updateTableStatus}/>
       ))}
     </div>
         </div>

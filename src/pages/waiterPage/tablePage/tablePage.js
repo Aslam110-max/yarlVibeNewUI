@@ -1,5 +1,5 @@
 // App.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TopTabNavigation from '../../../components/waiterPageComponents/tablePageComponent/topTabNavigation';
 
 import "./tablePage.css"
@@ -8,16 +8,56 @@ import UpperFloor from '../../../components/waiterPageComponents/tablePageCompon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-
+const API_URL ="http://localhost:5136/";
 const WaiterTablePage = () => {
+  //Calling Api
+  const [dataFloor0, setDataFloor0] = useState([]);
+  const [dataFloor1, setDataFloor1] = useState([]);
+  const refreshData = async () => {
+  try {
+    const response = await fetch(API_URL + "GetData");
+    const data = await response.json();
+    
+
+    const floor0 = data.filter(item => item.FloorID === 0);
+    const floor1 = data.filter(item => item.FloorID === 1);
+
+    setDataFloor0(floor0);
+    setDataFloor1(floor1);
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};
+
+useEffect(() => {
+  refreshData();
+}, []);
+
+const updateTableStatusFloor0 = ( TableCode, newStatus) => {
+  const updatedDataFloor0 = dataFloor0.map(table => {
+    if (table.TableCode === TableCode) {
+      return { ...table, TableStatus: newStatus };
+    }
+    return table;
+  });
+  setDataFloor0(updatedDataFloor0);
+};
+const updateTableStatusFloor1 = ( TableCode, newStatus) => {
+  const updatedDataFloor0 = dataFloor1.map(table => {
+    if (table.TableCode === TableCode) {
+      return { ...table, TableStatus: newStatus };
+    }
+    return table;
+  });
+  setDataFloor0(updatedDataFloor0);
+};
+  //////////////////
   const [selectedTab, setSelectedTab] = useState('Main Floor');
   const navigate = useNavigate();
-
   const handleBellIconClick = () => {
     navigate('/waiter-page/notification-page');
   };
-  const data = ["Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8"];
-  const data2 = ["Item 11", "Item 22", "Item 33", "Item 44", "Item 55", "Item 66", "Item 77", "Item 88","Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 6", "Item 7", "Item 8"];
+  
 
   return (
     
@@ -29,8 +69,8 @@ const WaiterTablePage = () => {
           </div>
           <div>
             <TopTabNavigation onSelectTab={setSelectedTab} />
-            {selectedTab === 'Main Floor' && <MainFloor data={data}/>}
-            {selectedTab === 'Upper Floor' && <UpperFloor data={data2}/>}
+            {selectedTab === 'Main Floor' && <MainFloor data={dataFloor0} updateTableStatus={updateTableStatusFloor0}/>}
+            {selectedTab === 'Upper Floor' && <UpperFloor data={dataFloor1} updateTableStatus={updateTableStatusFloor1}/>}
           </div>
       </div>
     
