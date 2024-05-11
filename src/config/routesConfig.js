@@ -8,6 +8,7 @@ import CashierHomePage from '../pages/cashierPage/cashierHomePage';
 import MobileFoodOrderPage from '../components/cashierPageComponent/mobileFoodOrderpPage/mobileFoodOrderPage';
 import KitchenStaffPage from '../pages/kitchenStaffPage/kitchenStaffPage';
 import App from '../App';
+import SelectTablePage from '../components/cashierPageComponent/selectTable/selectTable';
 
 const RoutesConfig = () => {
   return (
@@ -18,6 +19,7 @@ const RoutesConfig = () => {
         <Route path="/waiter-page/notification-page" element={<NotificationPage />} />
       
         <Route path="/cashier-home-page" element={<CashierHomePage />} />
+        <Route path="/cashier-home-page/select-table" element={<SelectTablePage />} />
         <Route path="/cashier-home-page/orders" element={<MobileFoodOrderPage />} />
 
         <Route path="/kitchen-staff" element={<KitchenStaffPage />} />

@@ -1,5 +1,6 @@
 import React from 'react';
-import './tableComponent.css'; // Import CSS for styling
+import './tableComponent.css'; 
+import {updateDatabaseTableStatus} from '../../../services/tablePageApi.js'
 const TableTwoChair=({number})=>{
     return <div >
          <div className='table-twoChairs'>
@@ -19,11 +20,14 @@ const ThreeChair =()=>{
 </div>
 }
 const TableComponent = ({ tableNumber, tableStatus, updateTableStatus }) => {
+  
+  
   const HandleClick=()=>{
     const confirmToggle = window.confirm(tableStatus=="Available"?'Are you sure you want to change status to Occupied?':'Are you sure you want to change status to Available?');
     if (confirmToggle) {
-      const newStatus = tableStatus=="Available"?"Not Available":"Available"
+      const newStatus = tableStatus=="Available"?"Busy":"Available"
       updateTableStatus(tableNumber,newStatus );
+      updateDatabaseTableStatus({ tableCode: tableNumber, newStatus: newStatus });
     } else {
       //document.getElementById('checkbox').checked = false;
     }

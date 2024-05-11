@@ -8,29 +8,15 @@ import UpperFloor from '../../../components/waiterPageComponents/tablePageCompon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
-const API_URL ="http://localhost:5136/";
+import {getTableDetails} from '../../../services/tablePageApi.js'
 const WaiterTablePage = () => {
   //Calling Api
   const [dataFloor0, setDataFloor0] = useState([]);
   const [dataFloor1, setDataFloor1] = useState([]);
-  const refreshData = async () => {
-  try {
-    const response = await fetch(API_URL + "GetData");
-    const data = await response.json();
-    
-
-    const floor0 = data.filter(item => item.FloorID === 0);
-    const floor1 = data.filter(item => item.FloorID === 1);
-
-    setDataFloor0(floor0);
-    setDataFloor1(floor1);
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-};
+  
 
 useEffect(() => {
-  refreshData();
+  getTableDetails({setDataFloor0,setDataFloor1});
 }, []);
 
 const updateTableStatusFloor0 = ( TableCode, newStatus) => {
@@ -43,13 +29,13 @@ const updateTableStatusFloor0 = ( TableCode, newStatus) => {
   setDataFloor0(updatedDataFloor0);
 };
 const updateTableStatusFloor1 = ( TableCode, newStatus) => {
-  const updatedDataFloor0 = dataFloor1.map(table => {
+  const updatedDataFloor1 = dataFloor1.map(table => {
     if (table.TableCode === TableCode) {
       return { ...table, TableStatus: newStatus };
     }
     return table;
   });
-  setDataFloor0(updatedDataFloor0);
+  setDataFloor1(updatedDataFloor1);
 };
   //////////////////
   const [selectedTab, setSelectedTab] = useState('Main Floor');
