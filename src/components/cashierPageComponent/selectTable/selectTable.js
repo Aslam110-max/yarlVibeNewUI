@@ -4,6 +4,8 @@ import SelectTableMainFloor from "./selectTableMainFloor";
 import SelectTableTopTabNavigation from "./selectTableTopTabNavigation";
 import SelectTableUpperFloor from "./selectTableUpperFloor";
 import { getTableDetails } from "../../../services/tablePageApi";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClose } from "@fortawesome/free-solid-svg-icons";
 
 const SelectTablePage = ({ setSelectedTable, setIsShowTable }) => {
   //Calling Api
@@ -34,11 +36,20 @@ const SelectTablePage = ({ setSelectedTable, setIsShowTable }) => {
   };
   //////////////////
   const [selectedTab, setSelectedTab] = useState("Main Floor");
+  const handleCloseIconClick = () => {
+    setIsShowTable(false);
+    //  navigate('/cashier-home-page/orders');
+  };
 
   return (
     <div>
       <div className="select-table-tableHeader">
         <h1 className="select-table-title">Tables</h1>
+        <FontAwesomeIcon
+        icon={faClose}
+        className="select-table-close-icon"
+        onClick={handleCloseIconClick}
+      />
       </div>
       <div>
         <SelectTableTopTabNavigation onSelectTab={setSelectedTab} />

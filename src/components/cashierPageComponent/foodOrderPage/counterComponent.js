@@ -3,6 +3,7 @@ import "./counterComponent.css"; // Import CSS file
 
 const CounterComponent = ({
   foodName,
+  menuItemID,
   price,
   singlePrice,
   quantity,
@@ -13,7 +14,9 @@ const CounterComponent = ({
 }) => {
   const updateQuantityAndPrice = (newQuantity,newPrice) => {
     const updatedFood = {
+      
       name: foodName,
+      menuItemID:menuItemID,
       quantity: newQuantity,
       price: newPrice,
       singlePrice:singlePrice,

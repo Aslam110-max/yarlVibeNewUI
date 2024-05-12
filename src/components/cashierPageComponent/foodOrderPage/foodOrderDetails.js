@@ -3,6 +3,7 @@ import CounterComponent from "./counterComponent";
 import "./foodOrderDetails.css";
 const FoodOrderDetails = ({
   foodName,
+  menuItemID,
   price,
   singlePrice,
   quantity,
@@ -18,11 +19,13 @@ const FoodOrderDetails = ({
   };
   const updateCutermizeText = (newCustermizeText) => {
     const updatedFood = {
+      menuItemID:menuItemID,
       name: foodName,
       quantity: quantity,
       price: price,
       singlePrice:singlePrice,
       custermizeText: newCustermizeText,
+
     };
     setSelectedFoods((selectedFoods) => {
       const updatedIndex = selectedFoods.findIndex(
@@ -41,6 +44,7 @@ const FoodOrderDetails = ({
       <div className="sub-order-food-details">
         <CounterComponent
           foodName={foodName}
+          menuItemID={menuItemID}
           quantity={quantity}
           price={price}
           singlePrice={singlePrice}
@@ -64,7 +68,7 @@ const FoodOrderDetails = ({
         <div className="collapsible-content">
           <input
             onChange={(e) => {
-              updateCutermizeText(e.target.value());
+              updateCutermizeText(e.target.value);
             }}
             value={custermizeText}
             type="text"

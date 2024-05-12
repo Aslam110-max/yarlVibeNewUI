@@ -1,8 +1,8 @@
 import "./billComponent.css"
 import React, { useState } from "react";
-const BillComponent=({totalPrice})=>{
+const BillComponent=({totalPrice, setCash})=>{
     const [balanceMoney,setBalanceMoney] = useState(0);
-    const [cash,setCash] = useState(0);
+    
     const TotalPriceComponent=()=>{
         return (
             <div style={{display:"flex", justifyContent:"center"}}>
@@ -27,6 +27,7 @@ const BillComponent=({totalPrice})=>{
    const calculateBalance=(cash)=>{
         // Convert text to number
         if (!isNaN(cash)) {
+            setCash(cash);
             const balance = cash-totalPrice; 
             setBalanceMoney(balance)
         } else {

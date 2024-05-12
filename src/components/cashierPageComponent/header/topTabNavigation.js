@@ -4,9 +4,13 @@ import "./topTabNavigation.css"; // Import CSS for navigation bar styles
 
 const TopTabNavigationCashier = ({ onSelectTab }) => {
   const [activeTab, setActiveTab] = useState("Short Eats");
-  const handleTabClick = (tab) => {
-    onSelectTab(tab);
-    setActiveTab(tab);
+  const handleTabClickSE = () => {
+    onSelectTab("Short Eats");
+    setActiveTab("Short Eats");
+  };
+  const handleTabClickMC = () => {
+    onSelectTab("Main Course");
+    setActiveTab("Main Course");
   };
 
   return (
@@ -19,7 +23,7 @@ const TopTabNavigationCashier = ({ onSelectTab }) => {
           backgroundColor:
             activeTab == "Short Eats" ? "rgb(193, 64, 0)" : "white",
         }}
-        onClick={() => handleTabClick("Short Eats")}
+        onClick={handleTabClickSE}
       >
         Short Eats
       </div>
@@ -30,7 +34,7 @@ const TopTabNavigationCashier = ({ onSelectTab }) => {
           backgroundColor:
             activeTab == "Main Course" ? "rgb(193, 64, 0)" : "white",
         }}
-        onClick={() => handleTabClick("Main Course")}
+        onClick={handleTabClickMC}
       >
         Main Course
       </div>
