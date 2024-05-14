@@ -9,9 +9,7 @@
         align-items: center;
        
       }
-      .background-container-mainCourse{
-        height: 740px
-      }
+      
   }
   
   @media (min-width: 421px) {
@@ -24,9 +22,7 @@
         justify-content: center;
         align-items: center;
       }
-      .background-container-mainCourse{
-        height: 580px;
-      }
+     
       
   }
 
@@ -34,6 +30,7 @@
   
 
   .background-container-mainCourse {
+    height: 100vh;
     display: flex;
     padding-top: 1%;
     justify-content: center;

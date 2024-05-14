@@ -1,16 +1,6 @@
-@media (max-width: 421px) {
-    .kitchen-order-details{
-        height :740px
-    }
-    
-   }
-   
-   @media (min-width: 421px) {
-    .kitchen-order-details{
-        height :580px
-      }
-   }
+
 .kitchen-order-details{
+  height: 80vh;
     display: flex; 
     justify-content: center;
     align-items: center;

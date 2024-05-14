@@ -1,7 +1,6 @@
 // App.js
 import React, { useEffect, useState } from 'react';
 import TopTabNavigation from '../../../components/waiterPageComponents/tablePageComponent/topTabNavigation';
-
 import "./tablePage.css"
 import MainFloor from '../../../components/waiterPageComponents/tablePageComponent/mainFloor';
 import UpperFloor from '../../../components/waiterPageComponents/tablePageComponent/upperFloor';
