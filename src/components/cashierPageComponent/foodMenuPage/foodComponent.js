@@ -36,18 +36,21 @@ const FoodComponent = ({ menuItem, setSelectedFoods }) => {
     });
   };
   const handleAddButtonCick = () => {
-    if( newFoodMobile!==null&& newFoodMobile.hasOwnProperty('quantity'))
-    {setSelectedFoods((selectedFoods) => {
-      const foodNameExists = selectedFoods.find(
-        (food) => food.name === newFoodMobile.name
-      );
-      if (!foodNameExists) {
-        return [...selectedFoods, newFoodMobile];
-      } else {
-        return selectedFoods;
-      }
-    });}else{
-      alert("Please select qauntity of the food!")
+    if (newFoodMobile !== null && newFoodMobile.hasOwnProperty("quantity")) {
+      setSelectedFoods((selectedFoods) => {
+        const foodNameExists = selectedFoods.find(
+          (food) => food.name === newFoodMobile.name
+        );
+        if (!foodNameExists) {
+          alert("Food added succesfuly!")
+          return [...selectedFoods, newFoodMobile];
+        } else {
+          alert("Food already added!")
+          return selectedFoods;
+        }
+      });
+    } else {
+      alert("Please select qauntity of the food!");
     }
   };
   const AddButton = () => {

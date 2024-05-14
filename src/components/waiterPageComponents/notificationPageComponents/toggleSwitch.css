@@ -1,21 +1,24 @@
 @media (max-width: 421px) {
-    .container {
+    .toggle-switch-container {
         text-align: center;
         padding-right: 5%;
+        
         
       }
    
   }
   
   @media (min-width: 421px) {
-    .container {
+    .toggle-switch-container {
         text-align: center;
         padding-right: 1%;
+        
       }
    
   }
 
   .toggle-switch {
+   
     position: relative;
     width: 120%;
     display: inline-block;

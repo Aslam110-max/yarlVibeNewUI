@@ -8,7 +8,7 @@
     cursor: pointer;
   }
   
-  .accept {
+  .pending {
     background-color: green;
     color: white;
   }
@@ -22,4 +22,7 @@
     background-color: blue;
     color: white;
   }
-  
+  .delivered {
+    background-color: red;
+    color: white;
+  }

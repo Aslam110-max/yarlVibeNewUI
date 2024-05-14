@@ -1,33 +1,36 @@
 import "./toggleSwitch.css";
 import React, { useState } from 'react';
+import { updateNotificationFoodStatus } from "../../../services/notificationPageApi";
 
  
-const ToggleSwitch = ({label}) => {
-  const [isChecked, setIsChecked] = useState(false);
+const ToggleSwitch = ({label,foodStatus,orderID}) => {
+  const [isChecked, setIsChecked] = useState(foodStatus==="delivered"?true:false);
       const handleToggle = () => {
-        
-        const confirmToggle = window.confirm('Are you sure you want to toggle?');
+        if(!isChecked){
+          const confirmToggle = window.confirm('Are you sure you want to change status to delivered?');
         if (confirmToggle) {
-          setIsChecked(!isChecked);
-          console.log(label);
-        } else {
-          //document.getElementById('checkbox').checked = false;
+          updateNotificationFoodStatus({orderID:orderID, foodStatus:'delivered'})
+          setIsChecked(true);
+          
+        }
+        }else{
+          alert("Order already delivered!!")
         }
       };
  
 
   return (
-    <div className="container"  >
+    <div>
+      {foodStatus==="processing"?<div style={{color:"red", fontSize:"100%"}} >Processing </div> :<div className="toggle-switch-container"  >
       <div className="toggle-switch">
         <input type="checkbox" className="checkbox"
-               name={label} id={label} onClick={handleToggle} checked={isChecked}/>
+               name={label} id={label} onChange={handleToggle} checked={isChecked}/>
         <label className="label" htmlFor={label} >
           <span className="inner" />
           <span className="switch" />
         </label>
       </div>
-     
-      
+    </div>}
     </div>
   );
 };

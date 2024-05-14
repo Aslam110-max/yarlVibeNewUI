@@ -1,15 +1,24 @@
 import {  StyleSheet, Dimensions} from "react-native";
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import OrderDetailsComponent from "../../../components/waiterPageComponents/notificationPageComponents/orderDetails";
 import WaiterSearchBar from "../../../components/waiterPageComponents/notificationPageComponents/searchBar";
+import { getNotificationData } from "../../../services/notificationPageApi";
 import "./notificationPage.css"
 export default function NotificationPage(){
   const [searchText, setSearchText] = useState("");
-    const data = [];
+  const [notificationData,setNotificationData] = useState([])
+  const fetchNotificationData = async () => {
+    try {
+      await getNotificationData({ setNotificationData: setNotificationData });
+      console.log("Notification data fetched successfully!");
+    } catch (error) {
+      console.error('Error fetching notification data:', error);
+    }
+  };
+  useEffect(() => {
+    fetchNotificationData();
+  }, []);
 
-for (let i = 1; i <= 100; i++) {
-  data.push({ id: i });
-}
     return (
         <div>
           <div  className="header" >
@@ -27,14 +36,20 @@ for (let i = 1; i <= 100; i++) {
         </div>
        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
        <div   className="detailsContainer">
-      {(data.map((dataItem)=>
-       <div key={dataItem.id.toString()}>
-        {("#2334"+dataItem.id.toString().toLowerCase()).includes(searchText.toLowerCase())?
-        <OrderDetailsComponent id={"#2334"+dataItem.id.toString()} tableNo={"UF-T 03"} deliverd={true}/>:<div></div>}
+       {notificationData.map((dataItem) => (
+  <div key={dataItem.OrderID}>
+    {dataItem.OrderID.toString().includes(searchText) && (
+      <OrderDetailsComponent
+        id={dataItem.OrderID}
+        tableNo={dataItem.TableCode}
+        foodStatus = {dataItem.FoodStatus}
         
-        <div style={{ marginBottom: '0.3%' }} /> 
-       </div>
-      ))}
+      />
+    )}
+    <div style={{ marginBottom: '0.3%' }} />
+  </div>
+))}
+
       
         </div>
        </div>

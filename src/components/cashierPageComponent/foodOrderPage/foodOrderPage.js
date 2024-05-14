@@ -34,12 +34,13 @@ const FoodOrder = ({
         tableCode: selectedTable,
         cashPaid: cash,
         totalPrice: totalPrice,
-        foodStatus: "processing",
+        foodStatus: "pending",
         balance: cash - totalPrice,
         dateAndTime: dateAndTime,
         orderDetails: foods,
       };
       addOrder({ orderData });
+      alert("Order added succesfuly!")
     } else {
       if (isNaN(cash) || cash == 0) {
         alert("Enter valid amount of cash!");

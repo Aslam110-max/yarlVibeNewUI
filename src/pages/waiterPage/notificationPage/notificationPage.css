@@ -10,6 +10,9 @@
       .title{
         font-size: 25px;
       }
+      .detailsContainer{
+        height:740px;
+      }
    
   }
   
@@ -23,6 +26,9 @@
       }
       .title{
         font-size: 40px;
+      }
+      .detailsContainer{
+        height:570px;
       }
    
   }
@@ -45,7 +51,6 @@
   .detailsContainer {
       border-radius: 10;
       background-color: #FFFFFF;
-      height:100%;
       padding: 1%;
       width: 90%;
       align-self: center;

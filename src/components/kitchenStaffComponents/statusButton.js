@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import './statusButton.css'; // Import CSS file for styling
+import './statusButton.css';
+import { UpdateOrderStatus } from '../../services/kitchenStaffPageApi';
 
-const StatusButton = () => {
-  const [status, setStatus] = useState('accept');
+const StatusButton = ({foodStatus, orderID}) => {
+  const [status, setStatus] = useState(foodStatus);
 
   const handleClick = () => {
-    if (status === 'accept') {
+    if (status === 'pending') {
       if (window.confirm('Are you sure you want to accept the order?')) {
         setStatus('processing');
+        UpdateOrderStatus({orderID:orderID, foodStatus:'processing'})
       }
     } else if (status === 'processing') {
-      if (window.confirm('Are you sure you want to mark the order as processing?')) {
-        setStatus('completed');
-      }
-    } else if (status === 'completed') {
       if (window.confirm('Are you sure you want to mark the order as completed?')) {
-        // Perform any additional action if needed
+        setStatus('completed');
+       UpdateOrderStatus({orderID:orderID, foodStatus:'completed'})
       }
-    }
+    } 
   };
 
   return (
@@ -25,9 +24,10 @@ const StatusButton = () => {
       className={`status-button ${status}`}
       onClick={handleClick}
     >
-      {status === 'accept' && 'Accept'}
+      {status === 'pending' && 'Pending'}
       {status === 'processing' && 'Processing'}
       {status === 'completed' && 'Completed'}
+      {status === 'delivered' && 'Delivered'}
     </button>
   );
 };

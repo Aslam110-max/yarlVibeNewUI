@@ -1,4 +1,5 @@
 const API_URL ="http://localhost:5136/";
+//Get table details
 export const getTableDetails = async ({setDataFloor0, setDataFloor1}) => {
     try {
       const response = await fetch(API_URL + "GetTableData");
@@ -14,6 +15,7 @@ export const getTableDetails = async ({setDataFloor0, setDataFloor1}) => {
       console.error('Error fetching data:', error);
     }
   };
+  //Update database status
 
   export const updateDatabaseTableStatus = async ({tableCode, newStatus}) => {
     try {
@@ -38,4 +40,7 @@ export const getTableDetails = async ({setDataFloor0, setDataFloor1}) => {
       console.error('Error updating TableStatus:', error);
     }
   };
+  //get notification details
+  
+
   
