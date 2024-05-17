@@ -34,60 +34,6 @@ const LoginPage = () => {
     }
   };
 
-  const UserNameTextFormField = () => {
-    return (
-      <div
-        style={{
-          justifyContent: "start",
-          alignItems: "start",
-          width: "90%",
-          marginBottom: "5%",
-          marginTop: "10%",
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          <div
-            style={{ fontWeight: "500", fontSize: "100%", marginRight: "3%" }}
-          >
-            Username
-          </div>
-          <FontAwesomeIcon icon={faIdCard} />
-        </div>
-
-        <input
-          type="text"
-          className="userID-text-field"
-          placeholder="########"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </div>
-    );
-  };
-  const PasswordTextFormField = () => {
-    return (
-      <div
-        style={{ justifyContent: "start", alignItems: "start", width: "90%" }}
-      >
-        <div style={{ display: "flex" }}>
-          <div
-            style={{ fontWeight: "500", fontSize: "100%", marginRight: "3%" }}
-          >
-            Password
-          </div>
-          <FontAwesomeIcon icon={faLock} />
-        </div>
-
-        <input
-          type={showPassword ? "text" : "password"}
-          className="userID-text-field"
-          placeholder="**********"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-    );
-  };
   const LoginButton = () => {
     return (
       <button
@@ -132,8 +78,52 @@ const LoginPage = () => {
           <div style={{ fontSize: "130%", marginRight: "3%" }}>Yarl</div>
           <div style={{ fontSize: "130%" }}>Vibe</div>
         </div>
-        <UserNameTextFormField />
-        <PasswordTextFormField />
+        <div
+        style={{
+          justifyContent: "start",
+          alignItems: "start",
+          width: "90%",
+          marginBottom: "5%",
+          marginTop: "10%",
+        }}
+      >
+        <div style={{ display: "flex" }}>
+          <div
+            style={{ fontWeight: "500", fontSize: "100%", marginRight: "3%" }}
+          >
+            Username
+          </div>
+          <FontAwesomeIcon icon={faIdCard} />
+        </div>
+
+        <input
+          type="text"
+          className="userID-text-field"
+          placeholder="########"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </div>
+        <div
+        style={{ justifyContent: "start", alignItems: "start", width: "90%" }}
+      >
+        <div style={{ display: "flex" }}>
+          <div
+            style={{ fontWeight: "500", fontSize: "100%", marginRight: "3%" }}
+          >
+            Password
+          </div>
+          <FontAwesomeIcon icon={faLock} />
+        </div>
+
+        <input
+          type={showPassword ? "text" : "password"}
+          className="userID-text-field"
+          placeholder="**********"
+          value={password}
+          onChange={(e) => {setPassword(e.target.value)}}
+        />
+      </div>
         <div className="show-password-checkbox">
           <input
             type="checkbox"
